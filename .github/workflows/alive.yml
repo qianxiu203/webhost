@@ -1,0 +1,10 @@
+name: Keep Actions Alive
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 每天运行一次（可调整为更松散）
+jobs:
+  alive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: entepotenz/keep-github-actions-alive-min-dependencies@v1
